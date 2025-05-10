@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* BODY Y FONDO */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../imgs/ordenadorymovil.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 60px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .logo {
+    color: darkmagenta;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: white;
+    text-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    padding: 0 50px;
+    font-weight: 600;
+    box-shadow: 0px 5px 10px rgb(54, 153, 245) inset,
+        0px 5px 10px rgba(0, 0, 0, 0.212),
+        0px -5px 10px rgb(4, 153, 245) inset;
+}
+
+header .logo:hover {
+    color: black;
+    background: rgb(4, 153, 245);
+    transition: 1s;
+}
+
+header .navbar {
+    display: flex;
+    list-style: none;
+}
+
+header .navbar li {
+    margin-left: 30px;
+}
+
+header .navbar li a {
+    text-decoration: none;
+    text-shadow: 7px 0px 5px black;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+header .navbar li a:hover {
+    border-bottom: 5px solid rgb(4, 153, 245);
+    padding: 2px;
+}
+
+/* CONTENIDO PRINCIPAL */
+main.contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+    /* Ajusta según el alto del header */
+    padding: 20px;
+}
+
+
+h2 {
+    color: rgb(255, 174, 0);
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* FORMULARIO */
+form.formulario {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgb(190, 187, 192);
+    border: 5px outset rgb(255, 174, 0);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+legend {
+    font-size: 20px;
+    color: rgb(255, 174, 0);
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    border: 2px solid rgb(255, 174, 0);
+    background-color: rgb(255, 174, 0);
+    font-size: 18px;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(4, 153, 245);
+    border-color: rgb(4, 153, 245);
+}
+
+.sexo-grupo {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.sexo-grupo label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: black;
+}
+
+.campo {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.campo2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre botón y texto */
+    margin: 0.5rem 0;
+    justify-content: flex-start;
+}
+
+
+
+/* BOTONES */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer .boxvolveratras {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer .boxvolveratras a {
+    color: darkmagenta;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+footer .boxvolveratras a:hover {
+    color: white;
+    background: darkmagenta;
+}
+
+/* COPYRIGHT */
+footer .copyright {
+    margin-top: 10px;
+    color: white;
+}
+
+/* REDES SOCIALES */
+.redesSociales {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px;
+    gap: 10px;
+}
+
+.redesSociales li a {
+    color: white;
+    font-size: 2.5em;
+    transition: 0.3s;
+}
+
+.redesSociales li a:hover {
+    color: rgb(4, 153, 245);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    form.formulario {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 30px 20px;
+        align-items: flex-start;
+    }
+
+    header .navbar {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .redesSociales {
+        flex-direction: row;
+        right: 10px;
+        bottom: 10px;
+    }
+}

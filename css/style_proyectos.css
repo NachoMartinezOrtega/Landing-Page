@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* BODY Y FONDO */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../imgs/fondo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 60px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .logo {
+    color: darkmagenta;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: white;
+    text-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    padding: 0 50px;
+    font-weight: 600;
+    box-shadow: 0px 5px 10px rgb(54, 153, 245) inset,
+        0px 5px 10px rgba(0, 0, 0, 0.212),
+        0px -5px 10px rgb(4, 153, 245) inset;
+}
+
+header .logo:hover {
+    color: black;
+    background: rgb(4, 153, 245);
+    transition: 1s;
+}
+
+header .navbar {
+    display: flex;
+    list-style: none;
+}
+
+header .navbar li {
+    margin-left: 30px;
+}
+
+header .navbar li a {
+    text-decoration: none;
+    text-shadow: 7px 0px 5px black;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+header .navbar li a:hover {
+    border-bottom: 5px solid rgb(4, 153, 245);
+    padding: 2px;
+}
+
+/*proyectos*/
+.texto-contenido {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 5em;
+    font-family: 'Inter', sans-serif, cursive;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.carta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+
+.card {
+    font-size: 1em;
+    font-family: 'Inter', sans-serif, cursive;
+    position: relative;
+    width: 400px;
+    height: 350px;
+    /*Fabricar margenes con el resto de cartas*/
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /*determina si, cuando la carta gira, la cara 
+    posterior a a ser visible o no. Hidden: no es visible; Visible: Sí es visible*/
+    border-radius: 10px;
+    overflow: hidden;
+    /*se le pone el mismo valor que a back-face*/
+    transition: 0.5s;
+    /*para la transición del movimiento*/
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    /*para el efecto del movimiento*/
+    box-shadow: 0px 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*indica cómo el contenido de un elemento es redimensionado 
+    para ajustarse al contenedor*/
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    /*linea de cabecera*/
+    color: #fff;
+    background: rgb(54, 153, 245);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    /*me lleva el texto a back*/
+    background: rgb(54, 153, 245);
+    padding: 35px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0px 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: 1px solid #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+    /*creo una línea para separalo de la info de arriba*/
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 1em;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    /*para dar espacio entre las letras y no quede apelotonado*/
+}
+
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* FOOTER */
+footer .boxvolveratras {
+    position: absolute;
+    left: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px;
+
+
+}
+
+footer .boxvolveratras a {
+    color: darkmagenta;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+footer .boxvolveratras a:hover {
+    color: white;
+    background: rgb(54, 153, 245);
+}
+
+/* COPYRIGHT */
+footer .copyright {
+    margin-top: 10px;
+    color: white;
+
+}
+
+/* REDES SOCIALES */
+.redesSociales {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px;
+    gap: 10px;
+}
+
+.redesSociales li a {
+    color: white;
+    font-size: 2.5em;
+    transition: 0.3s;
+}
+
+.redesSociales li a:hover {
+    color: rgb(4, 153, 245);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .texto-contenedor {
+        font-size: 2em;
+    }
+
+    .contenedor-galeria {
+        padding: 10px;
+    }
+
+    .contenedor-galeria li {
+        max-width: 100%;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header .logo {
+        padding: 10px 20px;
+        font-size: 1.2em;
+    }
+
+    header .navbar li a {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 1920px) {
+    .texto-contenido {
+        font-size: 6em;
+        margin-top: 40px;
+    }
+
+    .carta {
+        gap: 40px;
+        padding: 20px 80px;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 450px;
+        height: 380px;
+    }
+
+    .boxvolveratras {
+        margin-top: 60px;
+    }
+
+    .boxvolveratras a {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+}

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-image: url('../imgs/fondo.png');
+    /* IMAGEN DE FONDO*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    /*para que ocupe todo el ancho de la pantalla*/
+    min-height: 100vh;
+    /*la altura mínima es para que se vea solo el 100% de la pantalla*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+header {
+    font-weight: 1.4em;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 60px 100px;
+    display: flex;
+    justify-content: space-between;
+    /*que no haya espacio entre ellos*/
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 1.5em;
+    /*Se pone em para que sea responsive*/
+    text-decoration: none;
+    text-transform: uppercase;
+    /*que todas las letra se pongan en mayuscula*/
+    background: rgb(106, 0, 124);
+    text-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    padding: 0 50px;
+    font-weight: 600;
+    box-shadow: 0px 5px 10px rgb(54, 153, 245) inset,
+        0px 5px 10px rgba(0, 0, 0, 0.212),
+        0px -5px 10px rgb(4, 153, 245) inset;
+}
+
+/*para que el logo haga un efecto*/
+header .logo:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(4, 153, 245);
+    transition: 1s;
+}
+
+header .navbar {
+    display: flex;
+}
+
+header .navbar li {
+    /*para colocarlo como lista en linea*/
+    list-style: none;
+    margin-left: 30px;
+    /*separo los elementos que están alineados*/
+}
+
+header .navbar li a {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 7px 0px 5px black;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+header .navbar li a:hover {
+    border-bottom: 5px solid rgb(4, 153, 245);
+    padding: 2px;
+}
+
+footer .boxPaginaPpal {
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+    padding-top: 3%;
+}
+
+footer .boxPaginaPpal a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(4, 153, 245);
+    background: white;
+    padding: 10px 20px;
+    margin: left 30px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+footer .boxPaginaPpal a:hover {
+    color: white;
+    background: rgb(4, 153, 245);
+    ;
+    transition: 0.5s;
+}
+
+/*CONTENIDO LANDING PAGE INICIO*/
+.contenido {
+    font-size: 0.9em;
+    width: 100%;
+    display: flex;
+    /*permite que la caja sea flexible*/
+    flex-wrap: wrap;
+    /*hace como un acordeón para que cuando haga más pequeña la página, las cajas se adapten*/
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-left: 10%;
+}
+
+.contenido .tituloBox {
+    Position: relative;
+    max-width: 100%;
+    text-align: center;
+    padding-top: 4%;
+}
+
+.contenido .tituloBox h2 {
+    font-size: 4.5em;
+    text-transform: uppercase;
+    text-shadow: 7px 0px 5px black;
+    color: white;
+    margin-bottom: 2%;
+}
+
+.contenido .tituloBox h2 span {
+    background: rgb(70, 0, 83);
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    box-shadow: 0px 10px 5px rgb(54, 153, 245) inset,
+        0px 5px 10px rgba(0, 0, 0, 0.212),
+        0px -10px 5px rgb(4, 153, 245) inset;
+    padding: 0 50px;
+    text-shadow: 7px 0px 5px black;
+}
+
+.contenido .tituloBox p {
+    font-size: 1.8em;
+    line-height: 1.5;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 7px 0px 5px black;
+    font-weight: 300;
+    margin-top: 3%;
+    margin-bottom: 20px;
+}
+
+.contenido .tituloBox a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(54, 153, 245);
+    background: white;
+    padding: 10px 20px;
+    margin: left 30px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.contenido .tituloBox a:hover {
+    color: white;
+    background: rgb(70, 0, 83);
+    transition: 0.5s;
+}
+
+.contenido .imgBox img {
+    height: 50vh;
+    transform: translateX(-100px);
+}
+
+/*COPYRIGHT*/
+.copyright {
+    position: absolute;
+    bottom: 0px;
+    left: -100px;
+    margin-bottom: 20px;
+    padding: 0 100px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.copyright p {
+    color: white;
+    text-align: center;
+    margin-left: 100px;
+}
+
+/*REDES SOCIALES*/
+.redesSociales {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px 30px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.redesSociales li {
+    padding: 10px;
+}
+
+.redesSociales li a {
+    color: white;
+    font-size: 2.5em;
+    transition: 0.3s;
+}
+
+.redesSociales li:hover a {
+    color: rgb(4, 153, 245);
+}
