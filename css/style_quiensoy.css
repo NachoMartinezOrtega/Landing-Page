@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 * {
   margin: 0;
@@ -13,6 +13,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  min-height: 100vh;
 }
 
 /* HEADER */
@@ -25,104 +26,93 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
+  background: transparent;
 }
 
-header .logo {
-  font-size: 2em;
+.logo {
+  font-size: 1.5em;
   text-decoration: none;
-  text-transform: uppercase;
   background: rgb(106, 0, 124);
   color: white;
-  padding: 0 50px;
+  padding: 10px 30px;
   border-radius: 5px;
   font-weight: 600;
+  text-transform: uppercase;
   text-shadow: 0 0 5px black;
-  box-shadow: 0 5px 10px rgb(54, 153, 245) inset,
-    0 5px 10px rgba(0, 0, 0, 0.212),
-    0 -5px 10px rgb(4, 153, 245) inset;
-  transition: 0.5s;
+  box-shadow: inset 0 5px 10px rgb(54, 153, 245),
+              0 5px 10px rgba(0, 0, 0, 0.212),
+              inset 0 -5px 10px rgb(4, 153, 245);
 }
 
-header .logo:hover {
-  background: rgb(4, 153, 245);
-  color: black;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
 }
 
-header .navbar {
+.navbar {
   display: flex;
   list-style: none;
 }
 
-header .navbar li {
+.navbar li {
   margin-left: 30px;
 }
 
-header .navbar li a {
+.navbar a {
   color: white;
   font-weight: 600;
   font-size: 1em;
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px;
-  text-shadow: 7px 0px 5px black;
+  text-shadow: 0px 0px 4px black;
   transition: 0.3s;
 }
 
-header .navbar li a:hover {
-  border-bottom: 5px solid rgb(4, 153, 245);
+.navbar a:hover {
+  border-bottom: 3px solid rgb(4, 153, 245);
 }
 
-/* MAIN */
+/* CONTENIDO */
 .contenido-quien-soy {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  align-items: flex-start;
-  padding: 200px 20% 10px;
+  padding: 160px 20px 40px;
   gap: 40px;
 }
 
-.img-contenedor-quienSoy {
-  flex: 1 1 600px;
-  max-width: 900px;
-  display: flex;
-  justify-content: center;
-}
-
-.img-contenedor-quienSoy img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
 .contenedor-quienSoy {
-  flex: 1 1 400px;
-  background-color: rgb(94, 164, 255);
+  background-color: rgba(94, 164, 255, 0.9);
   color: rgb(106, 0, 124);
   font-size: 1.3em;
   padding: 39px;
   border-radius: 10px;
-  font-family: 'Inter', sans-serif, cursive;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .contenedor-quienSoy h2 {
   font-size: 2em;
   margin-bottom: 10px;
+  font-weight: 800;
 }
 
-/* VOLVER ATRÁS */
+/* BOTÓN VOLVER */
 .boxvolveratras {
   display: flex;
   justify-content: center;
-  margin: 40px auto;
+  margin: 40px auto 0;
 }
 
 .boxvolveratras a {
-  font-family: 'Inter', sans-serif, cursive;
   text-transform: uppercase;
   background: white;
   color: darkmagenta;
@@ -131,6 +121,7 @@ header .navbar li a:hover {
   text-decoration: none;
   letter-spacing: 1px;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 .boxvolveratras a:hover {
@@ -141,12 +132,12 @@ header .navbar li a:hover {
 /* FOOTER */
 footer .copyright {
   display: flex;
-  margin-top: 20px;
-  text-align: center;
+  justify-content: center;
   color: white;
+  margin-top: 20px;
 }
 
-/* REDES SOCIALES */
+/* REDES */
 .redesSociales {
   position: fixed;
   right: 0;
@@ -171,25 +162,42 @@ footer .copyright {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    padding: 20px;
-    align-items: flex-start;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.7);
   }
 
-  header .navbar {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 10px 0;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar li {
+    text-align: center;
+    margin: 0;
+  }
+
+  .navbar li a {
+    padding: 12px 0;
+    font-size: 1em;
+    font-weight: bold;
   }
 
   .contenido-quien-soy {
-    flex-direction: column;
-    padding-top: 120px;
-  }
-
-  .img-contenedor-quienSoy,
-  .contenedor-quienSoy {
-    width: 100%;
+    padding-top: 180px;
   }
 
   .redesSociales {

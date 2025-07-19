@@ -5,31 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Librería de iconos -->
+  <title>CONTACTO</title>
+  <link rel="stylesheet" href="css/style_formulario.css">
+  <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style_formulario.css">
-  <title>CONTACTO</title>
 </head>
 
 <body>
+<header>
+  <a href="index.html" class="logo">Ignacio Martinez Ortega</a>
+  <button class="menu-toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">
+    <ion-icon name="menu-outline"></ion-icon>
+  </button>
+  <ul class="navbar">
+    <li><a href="quien_soy.html">Quién soy</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li>
+    <li><a href="proyectos.html">Proyectos</a></li>
+    <li><a href="formulario.html">Contacto</a></li>
+  </ul>
+</header>
 
-  <header>
-    <a href="index.html" class="logo"> Ignacio Martinez Ortega</a>
-    <ul class="navbar">
-      <li><a href="quien_soy.htm">Quién soy</a></li>
-      <li><a href="curriculum.html">Curriculum</a></li>
-      <li><a href="proyectos.html">Proyectos</a></li>
-      <li><a href="formulario.html">Contacto</a></li>
-    </ul>
-  </header>
+
 
   <main class="contenido">
     <h2>Datos de contacto</h2>
     <form class="formulario" action="mailto:nacho.martinez.ortega@hotmail.com" method="post">
-
-      <!-- DATOS PERSONALES -->
       <fieldset>
         <legend>Datos personales</legend>
         <label for="nombre">Nombre:</label>
@@ -45,7 +46,6 @@
         <div class="campo"><input type="email" id="email" name="email" required></div>
       </fieldset>
 
-      <!-- SEXO -->
       <fieldset>
         <legend>Sexo Usuario</legend>
         <div class="sexo-grupo">
@@ -54,27 +54,21 @@
         </div>
       </fieldset>
 
-
-
-      <!-- FECHA DE NACIMIENTO -->
       <fieldset>
         <legend>Fecha de nacimiento</legend>
         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
         <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
       </fieldset>
 
-      <!-- COMENTARIOS -->
       <fieldset>
         <legend>Comentarios</legend>
         <textarea id="comentarios" name="comentarios"></textarea>
       </fieldset>
 
-      <!-- BOTONES -->
       <div class="btn-container">
         <button type="submit">Enviar</button>
         <button type="reset">Limpiar</button>
       </div>
-
     </form>
   </main>
 
@@ -104,7 +98,6 @@
       </a>
     </li>
   </ul>
-
 </body>
 
 </html>

@@ -12,20 +12,22 @@
 </head>
 
 <body>
-  <header>
-    <a href="index.html" class="logo">Ignacio Martinez Ortega</a>
-    <ul class="navbar">
-      <li><a href="quien_soy.htm">Quién soy</a></li>
-      <li><a href="curriculum.html">Curriculum</a></li>
-      <li><a href="proyectos.html">Proyectos</a></li>
-      <li><a href="formulario.html">Contacto</a></li>
-    </ul>
-  </header>
+<header>
+  <a href="index.html" class="logo">IGNACIO MARTINEZ ORTEGA</a>
+  <button class="menu-toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">
+    ☰
+  </button>
+  <ul class="navbar">
+    <li><a href="quien_soy.html">Quién soy</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li>
+    <li><a href="proyectos.html">Proyectos</a></li>
+    <li><a href="formulario.html">Contacto</a></li>
+  </ul>
+</header>
+
 
   <main class="contenido-quien-soy">
-    <div class="img-contenedor-quienSoy">
-      <img src="imgs/imagenfondo.png" alt="Ignacio" />
-    </div>
+    
     <div class="contenedor-quienSoy">
       <h2>¿QUIÉN SOY?</h2>
       <p>
@@ -37,8 +39,6 @@
       </p>
     </div>
   </main>
-
-
 
   <footer>
     <div class="boxvolveratras">
@@ -66,6 +66,14 @@
       </a>
     </li>
   </ul>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
